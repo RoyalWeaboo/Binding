@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="dataStudent"
+            type="com.malikazizali.databinding.rvdatabinding.Student" />
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:elevation="16dp"
+        app:cardCornerRadius="10dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="16dp">
+
+            <TextView
+                android:id="@+id/tv_nameStudent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text='@{dataStudent.name, default="Nama"}' />
+
+            <TextView
+                android:id="@+id/tv_nimStudent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_nameStudent"
+                android:text='@{dataStudent.nim, default="NIM"}' />
+
+            <ImageView
+                android:id="@+id/iv_gambarStudent"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_alignParentEnd="true"
+                app:imageResource='@{dataStudent.gambar}' />
+
+
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+</layout>
